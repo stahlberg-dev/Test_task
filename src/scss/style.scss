@@ -1,0 +1,23 @@
+@use "sass:math";
+
+$fontFamily: Roboto;
+$fontSize: 24px;
+$mainColor: #000;
+$primaryColor: #305C94;
+$buttonColor: rgb(249, 91, 42);
+$lightTextColor: #a2b1c5;
+
+$maxContentWidth: 1410px;
+$minWidth: 320px; 
+
+$pc: calc($maxContentWidth + 50px);
+$tablet: 992.02px;
+$mobile: 768.02px;
+$smallMobile: 480.02px;
+
+@import "basic_components/reset.scss";
+@import "fonts.scss";
+@import "basic_components/mixins.scss";
+@import "basic_components/common_styles.scss";
+@import "main_page.scss";
+

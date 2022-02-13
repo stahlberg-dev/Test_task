@@ -1,0 +1,67 @@
+body {
+    font-family: $fontFamily;
+    font-size: $fontSize;
+    font-weight: 400;
+    line-height: 1.5;
+    color: $mainColor;
+}
+
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    overflow: hidden;
+    
+    & main {
+        flex: 1 1 auto;
+    }
+}
+
+.container {
+    max-width: $maxContentWidth + 50px;
+    min-width: $minWidth;
+    margin: 0 auto;
+    padding: 0 15px;
+
+    @media (min-width: $mobile) {
+        padding: 0 25px;
+    }
+}
+
+.title {
+    text-transform: uppercase;
+    @include adaptiveValue("font-size", 20px, 40px);
+    font-weight: 900;
+    color: $primaryColor;
+}
+.list {
+    @include adaptiveValue("padding-top", 20px, 59px);
+
+    &__item {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    &__icon {
+        flex-shrink: 0;
+        flex-grow: 0;
+        @include adaptiveValue("flex-basis", 22px, 29px);
+        @include adaptiveValue("height", 22px, 29px);
+        @include adaptiveValue("margin-right", 12px, 22px);
+
+        @media (min-width: $smallMobile) {
+            transform: translate(0, 5%);
+        }
+
+        @media (min-width: $tablet) {
+            transform: translate(0, 15%);
+        }
+    }
+
+    &__text {
+        @include adaptiveValue("line-height", 24px, 40px);
+        @include adaptiveValue("font-size", 16px, 24px);
+    }
+}
+

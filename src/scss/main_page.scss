@@ -1,0 +1,335 @@
+.page {
+    background: #FFF;
+
+    @media (min-width: $tablet) {
+        background:  url("../img/stripes-1.jpg") no-repeat left 700px/36.5%,
+                    url("../img/stripes-2.jpg") no-repeat right bottom calc(500px + 40vw)/39%,
+                    url("../img/stripes-3.jpg") no-repeat right bottom calc(440px)/38%;
+    }
+
+    &__basic-complectation {
+        @include adaptiveValue("padding-top", 30px, 180px);
+    }
+
+    &__offers {
+        @include adaptiveValue("padding-top", 15px, 150px);
+    }
+
+    &__drinks {
+    }
+
+    &__advantages {
+        @include adaptiveValue("padding-bottom", 30px, 240px);
+    }
+}
+.basic-complectation {
+
+    &__container {
+        position: relative;
+        z-index: 10;
+    }
+
+    &__title {
+        position: relative;
+        text-align: center;
+        z-index: 5;
+
+        @media (min-width: $tablet) {
+            max-width: 57.5%;
+            text-align: left;
+        }
+    }
+
+    &__image {
+        width: 80%;
+        margin: 0 auto;
+
+        @media (min-width: $smallMobile) {
+            width: 50%;
+        }
+
+        @media (min-width: $tablet) {
+            position: absolute;
+            @include adaptiveValue("top", 0px, -90px, $tablet);
+            right: 25px;
+            @include adaptiveValue("width", 500px, 860px, $tablet);
+            margin: 0;
+        }
+    }
+
+    &__photo {
+        display: block;
+        width: 100%;
+    }
+
+    &__list {
+        position: relative;
+
+        @media (min-width: $smallMobile) {
+            @include adaptiveValue("left", 0px, 200px, $smallMobile, $tablet);
+        }
+
+        @media (min-width: $tablet) {
+            left: 0;
+        }
+        z-index: 5;
+    }
+}
+
+.offers {
+
+    &__container {
+        position: relative;
+        z-index: 10;
+    }
+
+    &__title {
+        text-align: center;
+        @include adaptiveValue("margin-bottom", 5px, 10px);
+    }
+
+    &__text {
+        text-align: center;
+        @include adaptiveValue("line-height", 24px, 48px);
+        @include adaptiveValue("font-size", 16px, 36px);
+        @include adaptiveValue("margin-bottom", 20px, 40px);
+    }
+
+    &__offer {
+
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 10px, 34px);
+        }
+    }
+}
+
+.offer {
+    width: 100%;
+    @include adaptiveValue("padding", 10px, 40px);
+    background-color: #FFF;
+    border-radius: 4px;
+    box-shadow: 0 12px 68px 4px rgba(0, 0, 0, 0.13);
+
+    @media (min-width: $smallMobile) {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    @media (min-width: $tablet) {
+        flex-wrap: nowrap;
+        padding: 0;
+    }
+
+
+    &__about {
+        flex: 1 1 40%;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: center;
+
+        @media (min-width: $smallMobile) {
+            display: block;
+        }
+
+        @media (min-width: $tablet) {
+            flex: 1 1 50%;
+            @include adaptiveValue("padding-left", 0px, 60px);
+        }
+    }
+    
+    &__title {
+        @include adaptiveValue("margin-bottom", 5px, 10px);
+        text-transform: uppercase;
+        text-align: center;
+        @include adaptiveValue("font-size", 18px, 36px);
+        font-weight: 700;
+
+        @media (min-width: $smallMobile) {
+            text-align: start;
+        }
+    }
+    
+    &__description {
+        @include adaptiveValue("font-size", 16px, 28px);
+    }
+    
+    &__image {
+        width: 70%;
+        margin: 0 auto;
+
+        @media (min-width: $smallMobile) {
+            flex: 0 0 40%;
+            margin: 0;
+        }
+
+        @media (min-width: $tablet) {
+            flex: 0 0 29%;
+        }
+    }
+    
+    &__photo {
+        width: 100%;
+    }
+    
+    &__order {
+
+        @media (min-width: $smallMobile) {
+            flex: 1 1 auto;
+            justify-content: space-around;
+            align-items: flex-end;
+            display: flex;
+            @include adaptiveValue("padding-right", 0px, 40px);
+        }
+
+        @media (min-width: $tablet) {
+            display: block;
+        }
+    }
+    
+    &__prices {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: center;
+
+        @media (min-width: $smallMobile) {
+            display: block;
+        }
+    }
+    
+    &__last-price {
+        @include adaptiveValue("margin-bottom", 5px, 10px);
+        text-decoration: line-through;
+        line-height: 1;
+        @include adaptiveValue("font-size", 18px, 36px);
+        color: $lightTextColor;
+    }
+
+    &__new-price {
+        line-height: 1.2;
+        @include adaptiveValue("font-size", 24px, 60px);
+        font-weight: 700;
+    }
+
+    &__saving {
+        line-height: 2;
+        @include adaptiveValue("font-size", 18px, 36px);
+    }
+
+    &__button {
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include adaptiveValue("width", 180px, 330px);
+        @include adaptiveValue("height", 40px, 66px);
+        border-radius: 4px;
+        padding: 5px;
+        background-color: $buttonColor;
+        transition: background-color 0.3s ease;
+
+        @media (min-width: $smallMobile) {
+            flex: 0 1 auto;
+            margin: 0;
+        }
+
+        @media (any-hover: hover) {
+
+            &:hover {
+                background-color: rgb(224, 59, 8);
+            }
+        }
+    }
+
+    &__button-text {
+        text-transform: uppercase;
+        line-height: 1;
+        @include adaptiveValue("font-size", 12px, 24px);
+        color: #FFF;
+    }
+}
+
+.drinks {
+    @include adaptiveValue("padding-top", 20px, 110px);
+    @include adaptiveValue("padding-bottom", 20px, 110px);
+
+    &__container {
+        position: relative;
+    }
+
+    &__title {
+        @include adaptiveValue("padding-bottom", 20px, 30px, $minWidth, $tablet);
+        text-align: center;
+
+        @media (min-width: $tablet) {
+            position: relative;
+            z-index: 10;
+            @include adaptiveValue("margin-left", 280px, 550px, $tablet);
+            @include adaptiveValue("padding-top", 70px, 220px, $tablet);
+            @include adaptiveValue("padding-bottom", 70px, 260px, $tablet);
+            text-align: start;
+        }
+
+        &_black {
+            color: #000;
+        }
+    }
+
+    &__image {
+        width: 60%;
+        margin: 0 auto;
+
+        @media (min-width: $mobile) {
+            width: 40%;
+        }
+
+        @media (min-width: $tablet) {
+            position: absolute;
+            top: 0;
+            @include adaptiveValue("left", 0px, -40px, $pc, 1920px);
+            z-index: 1;
+            @include adaptiveValue("width", 300px, 635px, $tablet); 
+            margin: 0;  
+        } 
+    }
+
+    &__bottle-with-stripes-photo {
+        display: none;
+        @media (min-width: $tablet) {
+            display: block;
+            width: 100%;
+        }
+    }
+
+    &__bottle-without-stripes-photo {
+        display: block;
+        width: 100%;
+
+        @media (min-width: $tablet) {
+            display: none;
+        }
+    }
+}
+
+.advantages {
+
+    &__container {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    &__title {
+        max-width: 750px;
+        text-align: center;
+    }
+
+    &__list {
+    }
+}
+
+
